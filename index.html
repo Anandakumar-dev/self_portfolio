@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anand Kumar - Web Developer Portfolio</title>
+
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+
+        /* ==================== HEADER (Hero) ==================== */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px 60px;
+            border-bottom: 3px solid #06b6d4;
+            animation: fadeIn 1.5s;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #06b6d4;
+            text-shadow: 2px 2px 10px rgba(6, 182, 212, 0.5);
+            margin-bottom: 10px;
+        }
+
+        header h3 {
+            font-size: 1.5em;
+            color: #fbbf24;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+
+        /* ==================== NAVIGATION ==================== */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1e293b;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 13px;
+            padding: 10px 18px;
+            margin: 3px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #06b6d4;
+            color: #0f172a;
+            transform: translateY(-3px);
+        }
+
+
+        /* ==================== SECTIONS ==================== */
+        section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 50px 40px;
+            background-color: #1e293b;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1s;
+        }
+
+        h2 {
+            color: #06b6d4;
+            text-align: center;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #fbbf24;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: #fbbf24;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #cbd5e1;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+
+        /* ==================== HOME SECTION ==================== */
+        #home {
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b, #334155);
+        }
+
+        #home img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #06b6d4;
+            margin: 20px 0;
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        #home a {
+            display: inline-block;
+            padding: 14px 35px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        #home a:first-of-type {
+            background-color: #06b6d4;
+            color: #0f172a;
+        }
+
+        #home a:last-of-type {
+            background-color: transparent;
+            color: #fbbf24;
+            border: 2px solid #fbbf24;
+        }
+
+        #home a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(6, 182, 212, 0.5);
+        }
+
+
+        /* ==================== ABOUT SECTION ==================== */
+        #about {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        #about h2 {
+            grid-column: 1 / -1;
+        }
+
+        #about img {
+            width: 100%;
+            border-radius: 20px;
+            border: 4px solid #06b6d4;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+
+        #about p {
+            margin-bottom: 15px;
+        }
+
+        #about strong,
+        #about b {
+            color: #fbbf24;
+        }
+
+
+        /* ==================== SKILLS SECTION ==================== */
+        #skills {
+            display: block;
+        }
+
+        #skills>div,
+        #skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        #skills h3 {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #skills ul,
+        #skills ol {
+            background-color: #0f172a;
+            padding: 25px 25px 25px 45px;
+            border-radius: 15px;
+            border-left: 4px solid #06b6d4;
+            list-style-position: outside;
+        }
+
+        #skills li {
+            color: #cbd5e1;
+            padding: 8px 0;
+            border-bottom: 1px solid #334155;
+            transition: all 0.3s;
+        }
+
+        #skills li:last-child {
+            border-bottom: none;
+        }
+
+        #skills li:hover {
+            color: #fbbf24;
+            padding-left: 10px;
+        }
+
+
+        /* ==================== PROJECTS SECTION ==================== */
+        #projects>div:not(:first-of-type):not(:nth-child(-n+2)) {
+            /* skip h2 and p */
+        }
+
+        #projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        #projects h2,
+        #projects>p {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        #projects>div {
+            background-color: #0f172a;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.4s;
+        }
+
+        #projects>div:hover {
+            transform: translateY(-10px);
+            border-color: #06b6d4;
+            box-shadow: 0 15px 30px rgba(6, 182, 212, 0.2);
+        }
+
+        #projects img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        #projects h3 {
+            padding: 15px 20px 5px;
+            color: #06b6d4;
+        }
+
+        #projects p {
+            padding: 5px 20px;
+            font-size: 14px;
+        }
+
+        #projects a {
+            display: inline-block;
+            color: #fbbf24;
+            text-decoration: none;
+            padding: 5px 15px;
+            margin: 15px 5px;
+            border: 1px solid #fbbf24;
+            border-radius: 20px;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        #projects a:hover {
+            background-color: #fbbf24;
+            color: #0f172a;
+        }
+
+
+        /* ==================== SERVICES SECTION ==================== */
+        #services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        #services h2 {
+            grid-column: 1 / -1;
+        }
+
+        #services>div {
+            background-color: #0f172a;
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid #06b6d4;
+            transition: all 0.3s;
+        }
+
+        #services>div:hover {
+            transform: translateY(-10px);
+            background-color: #334155;
+            border-top-color: #fbbf24;
+        }
+
+        #services h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+
+        /* ==================== RESUME SECTION ==================== */
+        #resume table {
+            width: 100%;
+            margin: 20px 0 40px;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #0f172a;
+        }
+
+        #resume th {
+            background-color: #06b6d4;
+            color: #0f172a;
+            padding: 15px;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        #resume td {
+            padding: 12px 15px;
+            color: #cbd5e1;
+            border-bottom: 1px solid #334155;
+        }
+
+        #resume tr:hover td {
+            background-color: #334155;
+            color: #fbbf24;
+        }
+
+        #resume ul {
+            background-color: #0f172a;
+            padding: 25px 25px 25px 45px;
+            border-radius: 15px;
+            border-left: 4px solid #fbbf24;
+        }
+
+        #resume ul li {
+            color: #cbd5e1;
+            padding: 8px 0;
+        }
+
+        #resume p a {
+            display: inline-block;
+            background-color: #fbbf24;
+            color: #0f172a;
+            padding: 12px 30px;
+            margin-top: 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        #resume p a:hover {
+            background-color: #06b6d4;
+            transform: scale(1.05);
+        }
+
+
+        /* ==================== STATS SECTION ==================== */
+        #stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+        }
+
+        #stats h2 {
+            grid-column: 1 / -1;
+            color: #0f172a;
+        }
+
+        #stats h2::after {
+            background-color: #0f172a;
+        }
+
+        #stats>div {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(15, 23, 42, 0.3);
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        #stats>div:hover {
+            transform: translateY(-10px);
+            background-color: rgba(15, 23, 42, 0.5);
+        }
+
+        #stats h3 {
+            font-size: 3em;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        #stats p {
+            color: #ffffff;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+
+        /* ==================== CONTACT SECTION ==================== */
+        #contact>div:first-of-type {
+            background-color: #0f172a;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #06b6d4;
+            margin-bottom: 30px;
+        }
+
+        #contact>div p {
+            padding: 8px 0;
+        }
+
+        #contact>div b {
+            color: #06b6d4;
+        }
+
+        form {
+            max-width: 700px;
+            margin: 30px auto 0;
+            background-color: #0f172a;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #334155;
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            color: #06b6d4;
+            margin: 15px 0 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #1e293b;
+            color: #e2e8f0;
+            border: 2px solid #334155;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        form input:focus,
+        form select:focus,
+        form textarea:focus {
+            border-color: #06b6d4;
+            outline: none;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+        }
+
+        form input[type="radio"],
+        form input[type="checkbox"] {
+            margin: 0 8px 0 0;
+            transform: scale(1.2);
+        }
+
+        form input[type="radio"]+label,
+        form input[type="checkbox"]+label {
+            display: inline-block;
+            font-weight: normal;
+            color: #cbd5e1;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-right: 20px;
+        }
+
+        form input[type="submit"],
+        form input[type="reset"] {
+            padding: 14px 40px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 15px 8px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        form input[type="submit"] {
+            background-color: #06b6d4;
+            color: #0f172a;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #fbbf24;
+            transform: scale(1.05);
+        }
+
+        form input[type="reset"] {
+            background-color: transparent;
+            color: #ef4444;
+            border: 2px solid #ef4444;
+        }
+
+        form input[type="reset"]:hover {
+            background-color: #ef4444;
+            color: #ffffff;
+        }
+
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background-color: #0f172a;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px 20px 30px;
+            margin-top: 60px;
+            border-top: 3px solid #06b6d4;
+        }
+
+        footer h3 {
+            color: #06b6d4;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        footer h4 {
+            color: #fbbf24;
+            margin: 25px 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        footer a {
+            display: inline-block;
+            color: #ffffff;
+            background-color: #1e293b;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        footer a:hover {
+            background-color: #06b6d4;
+            color: #0f172a;
+            transform: translateY(-3px);
+        }
+
+        footer p {
+            color: #94a3b8;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+
+        /* ==================== HR HIDE ==================== */
+        hr {
+            display: none;
+        }
+
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 50px rgba(6, 182, 212, 0.8);
+            }
+        }
+
+
+        /* ==================== MEDIA QUERIES ==================== */
+
+        /* TABLET */
+        @media (max-width: 992px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            section {
+                margin: 30px 20px;
+                padding: 30px 20px;
+            }
+
+            #about {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            #about img {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            #skills>div,
+            #skills-container,
+            #projects,
+            #services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            header {
+                padding: 50px 15px 40px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+
+            header h3 {
+                font-size: 1.1em;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 11px;
+                margin: 2px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                letter-spacing: 1px;
+            }
+
+            #home img {
+                width: 150px;
+                height: 150px;
+            }
+
+            #skills>div,
+            #skills-container,
+            #projects,
+            #services,
+            #stats {
+                grid-template-columns: 1fr;
+            }
+
+            #stats h3 {
+                font-size: 2em;
+            }
+
+            form {
+                padding: 20px;
+            }
+
+            #resume table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <h1>Anand Kumar</h1>
+        <h3>Full Stack Web Developer</h3>
+        <p>I build beautiful, responsive websites that users love.</p>
+    </header>
+
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+
+    <!-- ==================== HOME ==================== -->
+    <section id="home">
+        <h2>Welcome to My Portfolio</h2>
+        <img src="/CSS/profile.jpg" alt="Anand Profile">
+        <h3>Hi, I'm Anand Kumar</h3>
+        <p>A passionate <strong>Web Developer</strong> from Chennai, Tamil Nadu. I love creating modern websites using
+            latest technologies.</p>
+        <br>
+        <a href="#contact">Hire Me</a>
+        <a href="#projects">View My Work</a>
+    </section>
+
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about">
+        <h2>About Me</h2>
+        <!-- <img src="/CSS/photo1.jpeg" alt="About Me"> -->
+        <img src="/CSS/profile.jpg" alt="About Me">
+        <div>
+            <p>Hello! I'm <strong>Anand Kumar</strong>, a Full Stack Web Developer with <em>1+ years</em> of experience
+                in building web applications.</p>
+            <p>I specialize in <b>Frontend</b> and <b>Backend</b> development. I have completed 50+ projects for clients
+                across the world.</p>
+
+            <h3>My Details:</h3>
+            <p><b>Name:</b> Anand Kumar K</p>
+            <!-- <p><b>Age:</b> 25</p> -->
+            <p><b>Location:</b> Chennai, India</p>
+            <p><b>Email:</b> apjkalam94@email.com</p>
+            <p><b>Phone:</b> +91 99420 61760</p>
+            <p><b>Availability:</b> Freelance & Full-time</p>
+        </div>
+    </section>
+
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div id="skills-container">
+            <div>
+                <h3>Frontend</h3>
+                <ul>
+                    <li>HTML5 - 95%</li>
+                    <li>CSS3 - 90%</li>
+                    <li>JavaScript - 85%</li>
+                    <li>Bootstrap - 90%</li>
+                    <li>React - 75%</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Backend</h3>
+                <ul>
+                    <li>Python - 85%</li>
+                    <li>MySQL - 85%</li>
+                    <!-- <li>PHP - 80%</li> -->
+                    <li>Node.js - 70%</li>
+                    <li>MongoDB - 70%</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Tools</h3>
+                <ol>
+                    <li>Git & GitHub</li>
+                    <li>VS Code</li>
+                    <li>Canva</li>
+                    <!-- <li>Postman</li> -->
+                    <li>Chrome DevTools</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== PROJECTS old ==================== -->
+    <!-- <section id="projects">
+        <h2>My Projects</h2>
+        <p>Here are some of my recent works</p>
+
+        <div>
+            <img src="/CSS/e-commerce.jpg" alt="Project 1">
+            <h3>E-Commerce Website</h3>
+
+            <p><b>Tech:</b> HTML, CSS, JS </p>
+            <p>Complete shopping platform with cart & payment.</p>
+            <a href="https://anandakumar-dev.github.io/Freshmart-cart/">Live Demo</a>
+            <a href="https://anandakumar-dev.github.io/Freshmart-cart/">Source Code</a>
+        </div>
+
+
+        <div>
+            <img src="/CSS/Invoice-python.jpg" alt="Project 2">
+            <h3>Invoice Genaration system</h3>
+            <p><b>Tech:</b> Python, MySQL, HTML, CSS, JS </p>
+            <p>web-based invoice generation system to create, manage, and store customer billing records efficiently.
+            </p>
+            <a href="https://invoice-generation-python.onrender.com/">Live Demo</a>
+            <a href="https://invoice-generation-python.onrender.com/">Source Code</a>
+        </div>
+
+        <div>
+            <img src="/CSS/portfolio.jpg" alt="Project 3">
+            <h3>Self Portfolio</h3>
+            <p><b>Tech:</b> HTML, CSS, JS </p>
+            <p>Complete shopping platform with cart & payment.</p>
+            <a href="https://anandakumar-dev.github.io/portfolio/">Live Demo</a>
+            <a href="https://anandakumar-dev.github.io/portfolio/">Source Code</a>
+        </div>
+
+        <div>
+            <img src="/CSS/quiz.jpg" alt="Project 2">
+            <h3>Quiz Application</h3>
+            <p><b>Tech:</b> HTML, CSS, Bootstrap, JS</p>
+            <p>Interactive quiz application with multiple-choice questions, timer, score tracking, and result summary.
+            </p>
+            <a href="https://anandakumar-dev.github.io/Quiz/">Live Demo</a>
+            <a href="https://anandakumar-dev.github.io/Quiz/">Source Code</a>
+        </div>      
+    </section> -->
+
+
+    <!-- <section>
+        <div>
+            <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=Blog" alt="Project 3">
+            <h3>Blog Website</h3>
+            <p><b>Tech:</b> HTML, CSS, JS, PHP</p>
+            <p>Blog with categories, comments and search.</p>
+            <a href="#">Live Demo</a>
+            <a href="#">Source Code</a>
+        </div>
+
+        <div>
+            <img src="https://via.placeholder.com/400x250/ef4444/ffffff?text=Weather" alt="Project 4">
+            <h3>Weather App</h3>
+            <p><b>Tech:</b> HTML, CSS, JS, API</p>
+            <p>Real-time weather forecast using API.</p>
+            <a href="#">Live Demo</a>
+            <a href="#">Source Code</a>
+        </div>
+
+        <div>
+            <img src="https://via.placeholder.com/400x250/8b5cf6/ffffff?text=Todo+App" alt="Project 5">
+            <h3>Todo List App</h3>
+            <p><b>Tech:</b> HTML, CSS, JavaScript</p>
+            <p>Task management with add/edit/delete.</p>
+            <a href="#">Live Demo</a>
+            <a href="#">Source Code</a>
+        </div>
+
+        <div>
+            <img src="https://via.placeholder.com/400x250/ec4899/ffffff?text=Portfolio" alt="Project 6">
+            <h3>Portfolio Website</h3>
+            <p><b>Tech:</b> HTML, CSS, JavaScript</p>
+            <p>Personal portfolio - fully responsive.</p>
+            <a href="#">Live Demo</a>
+            <a href="#">Source Code</a>
+        </div>
+
+    </section> -->
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p>Here are some of my recent works</p>
+
+        <div>
+            <img src="/CSS/e-commerce.jpg" alt="Project 1">
+            <h3>E-Commerce Website</h3>
+            <p><b>Tech:</b> HTML, CSS, JS</p>
+            <p>Complete shopping platform with cart & payment.</p>
+            <a href="https://anandakumar-dev.github.io/Freshmart-cart/">Live Demo</a>
+            <a href="https://anandakumar-dev.github.io/Freshmart-cart/">Source Code</a>
+        </div>
+
+        <div>
+            <img src="/CSS/quiz.jpg" alt="Project 2">
+            <h3>Quiz Application</h3>
+            <p><b>Tech:</b> HTML, CSS, Bootstrap, JS</p>
+            <p>Interactive quiz application with multiple-choice questions,
+                timer, score tracking, and result summary.</p>
+            <a href="https://anandakumar-dev.github.io/Quiz/">Live Demo</a>
+            <a href="https://anandakumar-dev.github.io/Quiz/">Source Code</a>
+        </div>
+
+        <div>
+            <img src="/CSS/Invoice-python.jpg" alt="Project 3">
+            <h3>Invoice Generation System</h3>
+            <p><b>Tech:</b> Python, MySQL, HTML, CSS, JS</p>
+            <p>Web-based invoice generation system to create, manage,
+                and store customer billing records efficiently.</p>
+            <a href="https://invoice-generation-python.onrender.com/">Live Demo</a>
+            <a href="https://invoice-generation-python.onrender.com/">Source Code</a>
+        </div>
+
+        <div>
+            <img src="/CSS/portfolio.jpg" alt="Project 4">
+            <h3>Self Portfolio</h3>
+            <p><b>Tech:</b> HTML, CSS, JS</p>
+            <p>A personal portfolio website showcasing skills,
+                projects, and contact information with a clean responsive design.</p>
+            <a href="https://anandakumar-dev.github.io/portfolio/">Live Demo</a>
+            <a href="https://anandakumar-dev.github.io/portfolio/">Source Code</a>
+        </div>
+
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services">
+        <h2>Services I Offer</h2>
+
+        <div>
+            <h3>🌐 Web Development</h3>
+            <p>Fast, responsive websites using latest technologies.</p>
+        </div>
+
+        <div>
+            <h3>📱 Responsive Design</h3>
+            <p>Works perfectly on mobile, tablet and desktop.</p>
+        </div>
+
+        <div>
+            <h3>⚙️ Backend Development</h3>
+            <p>PHP, Python, MySQL and MongoDB solutions.</p>
+        </div>
+
+        <div>
+            <h3>🎨 UI/UX Design</h3>
+            <p>Clean, modern and user-friendly interfaces.</p>
+        </div>
+
+        <div>
+            <h3>🔧 Maintenance</h3>
+            <p>Updates, security and performance optimization.</p>
+        </div>
+
+        <div>
+            <h3>🚀 SEO Optimization</h3>
+            <p>Rank higher on Google search results.</p>
+        </div>
+    </section>
+
+
+    <!-- ==================== RESUME ==================== -->
+    <section id="resume">
+        <h2>My Experience</h2>
+
+        <h3>Work Experience</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Position</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025 - Present</td>
+                    <td>Web Developer</td>
+                    <td>UltraGITS</td>
+                    <td>Chennai</td>
+                </tr>
+                <tr>
+                    <td>2022 - 2024</td>
+                    <td>Senior Engineer</td>
+                    <td>Pegtatron Technologies (TATA Group of Company)</td>
+                    <td>Chennai</td>
+                </tr>
+                <!-- <tr>
+                    <td>2014 - 2022</td>
+                    <td>Freelance Developer</td>
+                    <td>Self Employed</td>
+                    <td>Remote</td>
+                </tr> -->
+            </tbody>
+        </table>
+
+
+        <h3>Education</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2018 - 2022</td>
+                    <td>B.TECH ECE</td>
+                    <td>SRM University</td>
+                    <td>8.95 CGPA</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h3>Achievements</h3>
+        <ul>
+            <li>🏆 Best Developer Award 2024</li>
+            <li>🥇 Won National Coding Competition 2023</li>
+            <li>📜 Google Cloud Certified Developer</li>
+            <li>⭐ Top Rated Freelancer on Upwork</li>
+        </ul>
+
+        <p>
+            <a href="#">Download Resume (PDF)</a>
+        </p>
+    </section>
+
+
+    <!-- ==================== STATS ==================== -->
+    <!-- <section id="stats">
+        <h2>My Journey in Numbers</h2>
+
+        <div>
+            <h3>50+</h3>
+            <p>Projects</p>
+        </div>
+
+        <div>
+            <h3>10+</h3>
+            <p>Clients</p>
+        </div>
+
+        <div>
+            <h3>5+</h3>
+            <p>Years Exp</p>
+        </div>
+
+        <div>
+            <h3>15+</h3>
+            <p>Awards</p>
+        </div>
+    </section> -->
+
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p style="text-align:center;">Have a project in mind? Let's work together!</p>
+
+        <div>
+            <h3>Get In Touch</h3>
+            <p><b>📍 Address:</b> Chennai, Tamil Nadu, India</p>
+            <p><b>📞 Phone:</b> +91 99420 61760</p>
+            <p><b>📧 Email:</b> apjkalam94@email.com</p>
+            <p><b>⏰ Available:</b> Mon - Fri, 9 AM - 6 PM</p>
+        </div>
+
+
+        <form action="#" method="POST">
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="10 digit number" maxlength="10">
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project title" required>
+
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+                <option value="">-- Select Service --</option>
+                <option value="web">Web Development</option>
+                <option value="responsive">Responsive Design</option>
+                <option value="backend">Backend Development</option>
+                <option value="ui">UI/UX Design</option>
+                <option value="maintenance">Website Maintenance</option>
+                <option value="seo">SEO Optimization</option>
+            </select>
+
+            <label>Budget Range</label>
+            <input type="radio" id="budget1" name="budget" value="low">
+            <label for="budget1">Below ₹10K</label>
+            <input type="radio" id="budget2" name="budget" value="mid">
+            <label for="budget2">₹10K - ₹50K</label>
+            <input type="radio" id="budget3" name="budget" value="high">
+            <label for="budget3">Above ₹50K</label>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                required></textarea>
+
+            <br><br>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to be contacted via email or phone</label>
+
+            <div style="text-align:center;">
+                <input type="submit" value="Send Message">
+                <input type="reset" value="Clear">
+            </div>
+
+        </form>
+    </section>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <h3>Anand Kumar</h3>
+        <p>Full Stack Web Developer</p>
+
+        <h4>Follow Me</h4>
+        <a href="https://github.com/Anandakumar-dev">GitHub</a>
+        <a href="https://www.linkedin.com/in/Anandakumar-K/">LinkedIn</a>
+        <a href="https://www.instagram.com/anandkumar_spark/">Instagram</a>
+        <!-- <a href="#">Twitter</a> -->
+        <!-- <a href="#">YouTube</a> -->
+
+        <p>© 2026 Anand Kumar. All rights reserved.</p>
+        <p>Made with ❤️ in Chennai, India</p>
+    </footer>
+
+</body>
+
+</html>
